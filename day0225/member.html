@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입</title>
+<style>
+    /*이 영역은 스타일 시트의 영역이다.. 즉 html태그 영역이 아니다
+    따라서 스타일 시트문법만 작성할수 있다..
+    스타일 태그를 이요하면, 문서내에 스타일 시ㅡ를 적용할 대상을 
+    이로간적으로 지정 및 적용 할 수 있다..
+    스타일 시트의 문법 구조 
+    누구를{ 어떻게~~}
+    */
+    td{
+        font-size: 10px; 
+        color:red;
+    }
+    select{
+        color: white;
+        background-color: blue;
+    }
+    input{
+        background-color: yellow;
+        border: 1px solid green;
+    }
+    /*일괄 적용 + 원하는 곳에만 적용시킬 수 있는 나만의 스타일 정의
+    이러한 스타일 시트 블럭을 가리켜 클래스라 한다.*/ 
+    .title_style{
+        text-align: center;
+    }
+    textarea{
+        background-color: pink;
+        background-image: url(data:image/jpeg;base64,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);
+        background-repeat: no-repeat;
+        width:600px;
+        height: 300px;
+        background-size: 600px 300px;
+        padding: 0px;
+        margin: 0px;
+
+    }
+</style>
+</head>
+<body>
+<table border="1px" align="center" width="700px">
+    <tr>
+        <td colspan="2"  align="center" style="font-size: 20px; color:blue; background-color: yellow; font-weight: bold;"> 회원가입 </td>
+    </tr>
+    <tr>
+        <td class="title_style">ID</td>
+        <td><input type="text" placeholder="Your ID"></td>
+    </tr>
+    <tr>
+        <td class="title_style">Password</td>
+        <td><input type="password" placeholder="Your password"></td>
+    </tr>
+    <tr>
+        <td class="title_style">Name</td>
+        <td><input type="text" placeholder="Your name"></td>
+    </tr>
+    <tr>
+        <td class="title_style">Phone</td>
+        <td>
+            <input type="text" placeholder="국번">-
+            <input type="text" placeholder="앞자리">-
+            <input type="text" placeholder="뒷자리">
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">Email</td>
+        <td>
+            <input type="text" placeholder="Your email">@
+            <select>
+                <option value="">gmail.com</option>
+                <option value="">nate.com</option>
+                <option value="">daum.net</option>
+                <option value="">naver.com</option>
+                <option value="">직접 입력</option>
+            </select>
+            </td>
+    </tr>
+    <tr>
+        <td class="title_style">skill</td>
+        <td>
+            <input type="checkbox"> node.js
+            <input type="checkbox"> oracle
+            <input type="checkbox"> mysql
+            <input type="checkbox"> javascript
+            <input type="checkbox"> css
+            <input type="checkbox"> react
+            
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">email receive</td>
+        <td>
+            <input type="radio" name="mail">Yes
+            <input type="radio" name="mail">no
+        </td>
+    </tr>
+    <tr>
+        <td class="title_style">introduction</td>
+        <td>
+            <textarea></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <button>가입</button>
+        </td>
+    </tr>
+
+
+</table>
+<hr>
+<ol>
+    <li>파인애플</li>
+    <li>오렌지</li>
+    <li>배</li>
+    <li>포도</li>
+</ol>
+<h1>더미 텍스트</h1>
+<h2>더미 텍스트</h2>
+<h3>더미 텍스트</h3>
+<h4>더미 텍스트</h4>
+<h5>더미 텍스트</h5>
+<h6>더미 텍스트</h6>
+<img>https://cdn2.iconfinder.com/data/icons/veterinary-line-fluffy-pet/512/Grooming-128.png
+<p>
+   <span style="font-size: 30px">Lorem</span>  <b>Ipsum</b> is simply dummy text of the printing and typesetting industry.
+</p>
+<p>
+     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+</P>
+<p>
+     It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+</body>
+</html>

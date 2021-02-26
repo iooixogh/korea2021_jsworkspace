@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>복합 구조의 레이아웃</title>
+<style>
+    #navi{
+        background-color: yellow;
+        width:700px;
+        height: 100px;
+    }
+    #side{
+        background-color: green;
+        width:100px;
+        height: 550px;
+        /*그 아무도 수평공간에 허용하지 않는 block 속성을 버리게하는 방법 즉
+        inline으로 바꾸는 방법*/
+        display: inline-block;
+    }
+    #content{
+        background-color: blue;
+        width:600px;
+        height: 550px;
+        display: inline-block;
+    }
+    #s{
+        background-color: red;
+        position:  absolute;
+        left: 0px;
+        top: 10px;    
+    }
+    #s2{
+        background-color: chartreuse;
+        position: absolute;
+        left: 10px;
+        top: 20px;
+    }
+    #box{
+        background-color: hotpink;
+    }
+</style>
+</head>
+<body>
+ <!--   <span id="s">난스팬</span>
+    <span id="s2">난스팬2</span>
+    <div id="box">난 div</div>
+-->
+    <div id="navi"> 노란색 박스  </div>
+    <div id="side">사이드</div>
+    <div id="content">컨텐츠 영역</div>
+
+</body>
+</html>
